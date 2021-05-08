@@ -1,13 +1,11 @@
-<div class="list row">
-    <div class="col-md-5">
-        <h4>Tutorials List</h4>
-        <ul class="list-group">
-          <li
-            class="list-group-item"
-            *ngFor="let product of products; let i = index"
-          >
-            {{ product.name }}
-          </li>
-        </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1" *ngFor="let product of products; let i = index">
+      
+        <p>Price: {{ product.price | currency: product.currency }}</p>
+        <img src="{{product.image}}" alt="">
+        <a routerLink="/products/{{product.id}}"><p>{{ product.name }}</p></a>
+      
     </div>
+  </div>
 </div>
