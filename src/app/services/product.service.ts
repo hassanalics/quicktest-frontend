@@ -21,4 +21,8 @@ export class ProductService {
   get(id): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
+
+  search(name): Observable<any> {
+    return this.http.get(`${baseUrl}/search?name=${name}`);
+  }
 }

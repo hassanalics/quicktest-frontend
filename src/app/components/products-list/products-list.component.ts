@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductsListComponent implements OnInit {
 
   products: any;
+  name: string;
 
   constructor(private productService: ProductService) { }
 
@@ -18,6 +19,18 @@ export class ProductsListComponent implements OnInit {
 
   retrieveProducts(): void {
     this.productService.getAll()
+      .subscribe(
+        data => {
+          this.products = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  searchName(): void {
+    this.productService.search(this.name)
       .subscribe(
         data => {
           this.products = data;
