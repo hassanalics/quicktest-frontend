@@ -11,8 +11,11 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
+  private offset = 0;
+  private limit = 12;
+
   getAll(): Observable<any> {
-    return this.http.get(baseUrl);
+    return this.http.get(`${baseUrl}?offset=${this.offset}&limit=${this.limit}`);
   }
 
   get(id): Observable<any> {
