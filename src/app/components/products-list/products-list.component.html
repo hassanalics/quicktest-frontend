@@ -1,27 +1,21 @@
+<br>
+
+<!-- Search Bar -->
 <div class="row">
-  <div class="col-md-8">
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by Product Name"
-        [(ngModel)]="name"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchName()"
-        >
-          Search
-        </button>
-      </div>
-    </div>
+  <div class="col-lg-12">
+    <form class="example" class="input-group">
+      <input type="text" class="form-control rounded" placeholder="Search by Product Name" name="search" [(ngModel)]="name">
+      <button type="submit" (click)="searchName()"><i class="fa fa-search"></i></button>
+    </form>
   </div>
 </div>
 
+<br>
+<br>
 
+<!-- Product List -->
 <div class="row">
+  <h4>Products List</h4>
   <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let product of products; let i = index">
     
       <p>Price: {{ product.price | currency: product.currency }}</p>
