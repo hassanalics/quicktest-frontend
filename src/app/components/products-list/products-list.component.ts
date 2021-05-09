@@ -9,9 +9,6 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductsListComponent implements OnInit {
 
   products: any;
-  currentTutorial = null;
-  currentIndex = -1;
-  title = '';
 
   constructor(private productService: ProductService) { }
 
