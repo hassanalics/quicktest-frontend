@@ -1,11 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-1" *ngFor="let product of products; let i = index">
-      
-        <p>Price: {{ product.price | currency: product.currency }}</p>
-        <img src="{{product.image}}" alt="">
-        <a routerLink="/products/{{product.id}}"><p>{{ product.name }}</p></a>
-      
-    </div>
+<div class="row">
+  <div class="col-md-2" *ngFor="let product of products; let i = index">
+    
+      <p>Price: {{ product.price | currency: product.currency }}</p>
+      <img src="{{product.image}}" alt="">
+      <a routerLink="/products/{{product.id}}"><p>{{ product.name }}</p></a>
+    
   </div>
 </div>
