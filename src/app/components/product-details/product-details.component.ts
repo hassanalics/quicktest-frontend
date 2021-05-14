@@ -32,4 +32,16 @@ export class ProductDetailsComponent implements OnInit {
           console.log(error);
         });
   }
+
+  updateProduct(): void {
+    this.productService.update(this.currentProduct.id, this.currentProduct)
+      .subscribe(
+        data => {
+          this.currentProduct = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
 }

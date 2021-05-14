@@ -25,4 +25,8 @@ export class ProductService {
   search(name): Observable<any> {
     return this.http.get(`${baseUrl}/search?name=${name}`);
   }
+
+  update(id, product): Observable<any> {
+    return this.http.put(`${baseUrl}/${id}`, product);
+  }
 }

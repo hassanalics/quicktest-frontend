@@ -7,3 +7,12 @@
     <br>
     <a href="{{currentProduct.link}}">Product Link</a>
 </div>
+
+<div *ngIf="currentProduct" class="edit-form">
+    <h4>Product</h4>
+    Name: <input type="text" [(ngModel)]="currentProduct.name">
+    Price: <input type="text" [(ngModel)]="currentProduct.price">
+    Description: <input type="text" [(ngModel)]="currentProduct.description">
+    Image: <input type="text" [(ngModel)]="currentProduct.image">
+    <button (click)="updateProduct()">Update</button>
+</div>

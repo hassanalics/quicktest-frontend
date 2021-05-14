@@ -10,8 +10,11 @@ export class ProductsListComponent implements OnInit {
 
   products: any;
   name: string;
+  currentDate: Date;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) { 
+    this.currentDate = new Date();
+  }
 
   ngOnInit(): void {
     this.retrieveProducts();
